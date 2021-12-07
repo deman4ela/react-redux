@@ -1,0 +1,74 @@
+{
+  "env": {
+    "jest/globals": true,
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "browser": "writable",
+    "NODE_ENV": true,
+    "IMO_CONTENT_VAULT_FRONTEND_VERSION": true
+  },
+  "plugins": ["jest", "lodash"],
+  "rules": {
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": ["multiline-const", "multiline-let", "function", "if", "iife", "import"],
+        "next": "*"
+      },
+      { "blankLine": "any", "prev": "import", "next": "import" },
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "react/no-array-index-key": ["error"],
+    "react/prop-types": ["error"],
+    "react/no-unused-prop-types": ["error"],
+    "react/jsx-no-duplicate-props": ["error"],
+    "react/default-props-match-prop-types": ["error"],
+    "react/require-default-props": ["error"],
+    "import/no-duplicates": ["error"],
+    "import/no-cycle": ["off"],
+    "lodash/prefer-lodash-method": ["off"],
+    "lodash/prefer-noop": ["off"],
+    "lodash/path-style": ["off"],
+    "lodash/matches-prop-shorthand": ["off"],
+    "lodash/prefer-some": ["off"],
+    "lodash/prefer-lodash-typecheck": ["off"],
+    "lodash/prefer-map": ["off"],
+    "lodash/prefer-is-nil": ["off"],
+    "lodash/collection-method-value": ["off"],
+    "lodash/import-scope": [2, "member"],
+    "lodash/preferred-alias": ["off"],
+    "lodash/prefer-constant": ["off"],
+    "lodash/collection-ordering": ["off"],
+    "lodash/matches-shorthand": ["off"],
+    "lodash/prefer-reject": ["off"],
+    "lodash/prop-shorthand": ["off"],
+    "prefer-named-capture-group": ["off"],
+    "react/boolean-prop-naming": ["off"],
+    "jsx-a11y/anchor-is-valid": ["off"],
+    "jsx-a11y/mouse-events-have-key-events": ["off"],
+    "react/no-access-state-in-setstate": ["off"],
+    "react/jsx-handler-names": ["off"],
+    "jest/no-disabled-tests": ["off"],
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
+    "react-hooks/exhaustive-deps": ["off"],
+    "consistent-return": ["off"],
+    "callback-return": ["off"],
+    "no-undefined": ["off"],
+    "no-irregular-whitespace": ["off"],
+    "no-shadow": ["off"],
+    "eol-last": ["error", "always"],
+    "object-curly-spacing": ["error", "always"]
+  }
+}
