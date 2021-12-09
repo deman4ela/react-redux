@@ -1,9 +1,7 @@
-import { bindActionCreators } from "redux"
 import { FETCH_PLACEHOLDER_DATA_SUCCESS, FETCH_PLACEHOLDER_DATA_ERROR } from "./types";
 
 const defaultState = {
     visitorName: 'Dima',
-    age: 25,
     placeholderDataSuccess: [],
     placeholderDataError: ''
 }

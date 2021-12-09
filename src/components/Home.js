@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeVisitorNameAction } from '../redux/reducer';
 import { fetchPlaceholderData } from '../redux/actions';
 import PlaceholderData from './PlaceholderData';
 import ErrorMessage from './ErrorMessage';
 
 function Home() {
-    const [ name, setName] = useState('')
-    const { age, visitorName }  = useSelector((state) => state)
+    const { visitorName }  = useSelector((state) => state)
     const dispatch = useDispatch()
 
     const handleClick = () => {
