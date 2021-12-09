@@ -17,9 +17,9 @@ const appReducer = (state = defaultState, action) => {
         case FETCH_PLACEHOLDER_DATA_ERROR:
             return { ...state, placeholderDataError: action.payload};
 
-        default:
-            return state    
-    }
+    default:
+      return state
+  }
 }
 
-export default appReducer;
+export default appReducer

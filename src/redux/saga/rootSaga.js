@@ -2,6 +2,7 @@ import { FETCH_PLACEHOLDER_DATA } from "../types";
 import { fetchPlaceholderDataSuccess, fetchPlaceholderDataError } from "../actions";
 import { getPlaceholderData } from "../../api/api";
 import { takeEvery, put, call } from 'redux-saga/effects';
+import regeneratorRuntime from "regenerator-runtime"
 
 export default function* rootSagaWatcher() {
     yield takeEvery(FETCH_PLACEHOLDER_DATA, rootSagaWorker);

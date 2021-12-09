@@ -9,13 +9,13 @@ import rootSagaWatcher from './redux/saga/rootSaga'
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(appReducer, compose(applyMiddleware(sagaMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() ));
+const store = createStore(appReducer, compose(applyMiddleware(sagaMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() ))
 
 sagaMiddleware.run(rootSagaWatcher);
 
 ReactDOM.render(
-<Provider store={store}> 
-    <App /> 
-</Provider>, 
-    document.getElementById('main')
-    )
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('main'),
+)
