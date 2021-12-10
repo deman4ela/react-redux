@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchPlaceholderData } from '../redux/actions';
 import PlaceholderData from './PlaceholderData';
 import ErrorMessage from './ErrorMessage';
+import mySelector from '../redux/selectors';
 
 function Home() {
-    const { visitorName }  = useSelector((state) => state)
+    const { visitorName }  = useSelector(mySelector)
     const dispatch = useDispatch()
 
     const handleClick = () => {
@@ -27,4 +28,4 @@ function Home() {
         </div>
     )
 }
-export default Home
+export default Home;
