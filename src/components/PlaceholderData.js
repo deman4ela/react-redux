@@ -1,5 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Button, Card, Elevation } from "@blueprintjs/core"
+import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 
 function PlaceholderData() {
    
@@ -9,13 +12,17 @@ function PlaceholderData() {
         <div>
           { placeholderDataSuccess.length ? placeholderDataSuccess.map((data) => {
             return (
-              <div key={data.id}>
-                <p>
-                  <span> {data.id} </span>
-                  <p> {data.title} </p>
-                  <p> {data.body} </p>
-                </p>   
-              </div>
+              <Card interactive={true} elevation={Elevation.FOUR}>
+                <div key={data.id}>
+                  <p>
+                    <span> {data.id} </span>
+                    <p> {data.title} </p>
+                  </p>   
+                </div>
+                <Link to={`/posts/${data.id}`}>
+                <Button> More details </Button>
+                </Link>
+              </Card>
             );
           }
           ) :

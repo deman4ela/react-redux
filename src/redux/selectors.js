@@ -1,11 +1,16 @@
 import { createSelector } from 'reselect'
 
 
-  const getNameFromStore = state => state.visitorName;
+  const getNameFromStore = state => state.visitorName
 
-  const mySelector = createSelector(
-    [getNameFromStore],
+ export const mySelector = createSelector(
+    getNameFromStore,
     visitorName => visitorName
 )
 
-export default mySelector;
+
+const getPostFromStore = state => state.postSuccess
+export const postSelector = createSelector(
+  getPostFromStore,
+  postSuccess => postSuccess
+)
