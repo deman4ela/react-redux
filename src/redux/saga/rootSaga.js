@@ -1,18 +1,10 @@
-import { FETCH_PLACEHOLDER_DATA } from "../types";
-import { fetchPlaceholderDataSuccess, fetchPlaceholderDataError } from "../actions";
-import { getPlaceholderData } from "../../api/api";
-import { takeEvery, put, call } from 'redux-saga/effects';
-import 'regenerator-runtime/runtime'
+import { all } from 'redux-saga/effects'
+import placeholderDataSagaWatcher from './placeholderDataSaga'
+import postSagaWatcher from './postSaga'
 
-export default function* rootSagaWatcher() {
-    yield takeEvery(FETCH_PLACEHOLDER_DATA, rootSagaWorker);
-  }
-  
-  function* rootSagaWorker() {
-    try {
-      const payload = yield call(getPlaceholderData);
-      yield put(fetchPlaceholderDataSuccess(payload));
-    } catch (error) {
-      yield put(fetchPlaceholderDataError(error.message));
-    }
+export default function* rootSaga() {
+    yield all([
+      placeholderDataSagaWatcher(),
+      postSagaWatcher()
+    ]);
   }

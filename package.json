@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@blueprintjs/core": "^3.52.0",
     "html-replace-webpack-plugin": "^2.6.0",
     "html-webpack-plugin": "^5.5.0",
     "react": "^17.0.2",

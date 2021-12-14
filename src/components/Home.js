@@ -1,28 +1,24 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchPlaceholderData } from '../redux/actions';
-import PlaceholderData from './PlaceholderData';
-import ErrorMessage from './ErrorMessage';
-import mySelector from '../redux/selectors';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchPlaceholderData } from '../redux/actions'
+import PlaceholderData from './PlaceholderData'
+import ErrorMessage from './ErrorMessage'
+import { mySelector } from '../redux/selectors'
+import { useLocation } from 'react-router'
 
 function Home() {
-    const { visitorName }  = useSelector(mySelector)
+    const visitorName = useSelector(mySelector)
     const dispatch = useDispatch()
 
-    const handleClick = () => {
+    useEffect(() => {
         dispatch(fetchPlaceholderData())
-    }
+    }, [])
     
     return (
         <div>
             <div>
                 Hello, {visitorName}!
-            </div>
-
-            <div>
-                <button type='submit' onClick={handleClick}> Get some data from JSONPlaceholder </button>
-            </div>
-            
+            </div>           
             <PlaceholderData/>
             <ErrorMessage/>
         </div>
